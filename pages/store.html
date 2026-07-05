@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Store Material</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-dark text-white">
+
+<div class="container mt-4">
+
+<h2 class="mb-4">📦 Store Material</h2>
+
+<div class="row">
+
+<div class="col-md-4">
+
+<label class="form-label">Photo</label>
+
+<input
+type="file"
+id="photo"
+class="form-control"
+accept="image/*">
+
+</div>
+
+<div class="col-md-8">
+
+<label class="form-label">Material Name</label>
+
+<input
+type="text"
+id="name"
+class="form-control">
+
+</div>
+
+</div>
+
+<div class="row mt-3">
+
+<div class="col-md-6">
+
+<label class="form-label">SAP No.</label>
+
+<input
+type="text"
+id="sap"
+class="form-control">
+
+</div>
+
+<div class="col-md-6">
+
+<label class="form-label">Quantity</label>
+
+<input
+type="number"
+id="qty"
+class="form-control">
+
+</div>
+
+</div>
+
+<div class="row mt-3">
+
+<div class="col-md-3">
+
+<label class="form-label">Shelf</label>
+
+<select
+id="shelf"
+class="form-select"
+onchange="updateStorageCode()">
+
+<option>F</option>
+<option>G</option>
+<option>H</option>
+<option>I</option>
+<option>J</option>
+<option>K</option>
+
+</select>
+
+</div>
+
+<div class="col-md-3">
+
+<label class="form-label">Level</label>
+
+<select
+id="level"
+class="form-select"
+onchange="updateStorageCode()">
+
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+
+</select>
+
+</div>
+
+<div class="col-md-3">
+
+<label class="form-label">Bin</label>
+
+<select
+id="bin"
+class="form-select"
+onchange="updateStorageCode()">
+
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+<option>11</option>
+<option>12</option>
+
+</select>
+
+</div>
+
+<div class="col-md-3">
+
+<label class="form-label">Location</label>
+
+<select id="location" class="form-select">
+
+<option>F7-WH</option>
+<option>F8-WH</option>
+<option>F3-WH</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="row mt-3">
+
+<div class="col-md-6">
+
+<label class="form-label">Storage Code</label>
+
+<input
+type="text"
+id="storageCode"
+class="form-control"
+readonly>
+
+</div>
+
+<div class="col-md-6">
+
+<label class="form-label">Status</label>
+
+<input
+type="text"
+class="form-control"
+value="Occupied"
+readonly>
+
+</div>
+
+</div>
+
+<div class="mt-4">
+
+<button
+class="btn btn-success"
+onclick="save()">
+
+💾 Save
+
+</button>
+
+<a
+href="../index.html"
+class="btn btn-secondary">
+
+← Back
+
+</a>
+
+</div>
+
+<hr>
+
+<div class="mb-3">
+
+<input
+id="search"
+class="form-control"
+placeholder="🔍 Search Material / SAP / Storage Code"
+onkeyup="searchMaterial()">
+
+</div>
+
+<table
+id="table"
+class="table table-dark table-striped table-hover align-middle">
+
+</table>
+
+</div>
+
+<script>
+
+function updateStorageCode(){
+
+const shelf=document.getElementById("shelf").value;
+
+const level=document.getElementById("level").value;
+
+const bin=document.getElementById("bin").value;
+
+document.getElementById("storageCode").value=
+
+`${shelf}-${level}-${bin}`;
+
+}
+
+updateStorageCode();
+
+</script>
+
+<script src="../js/store.js"></script>
+
+</body>
+
+</html>

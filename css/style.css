@@ -1,0 +1,15 @@
+body{
+    background:#0f172a;
+}
+
+.menu-card{
+    cursor:pointer;
+    transition:.3s;
+    border-radius:15px;
+}
+
+.menu-card:hover{
+    transform:translateY(-5px);
+    background:#0d6efd;
+    color:white;
+}
